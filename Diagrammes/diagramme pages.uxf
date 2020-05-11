@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>3</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>516</y>
+      <w>195</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>_Site de livraison_
+--
+
+- Les membres connectés peuvent commander un plat chez un restaurant. 
+- Il devra ensuite valider la réception de celui-ci. 
+- Un client peut acheter un plat s’il dispose d’un solde suffisant. 
+- Un espace restaurateur permettra aux restaurant d’ajouter, de modifier ou de supprimer leurs plats. 
+- Un espace administrateur sera mis en place pour gérer le service après-vente et les restaurateurs. </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>546</x>
+      <y>453</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Membre_
+--
+halign=center
+
+Partie où seul le client 
+y aura accès </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>453</y>
+      <w>63</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Restaurateur_
+--
+halign=center
+
+Partie où seul le restaurateur 
+y aura accès </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1158</x>
+      <y>447</y>
+      <w>63</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Administrateur_
+--
+halign=center
+
+Partie où seul l'adinistrateur 
+aura accès</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page d'inscription / Connexion_
+--
+halign=center
+
+Permettra à l'utilisateur d'accéder 
+ou de créer son compte client</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>549</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page d'accueil_
+--
+halign=center
+
+Page regroupant la liste de 
+tous les restaurants disponibles</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>621</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page restaurant_
+--
+halign=center
+
+Page regroupant tous les plats 
+d'un restaurant</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>474</y>
+      <w>279</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;910.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>414</y>
+      <w>81</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>414</y>
+      <w>9</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>414</y>
+      <w>84</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>474</y>
+      <w>9</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>711</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page d'inscription / Connexion_
+--
+halign=center
+
+Permettra à l'utilisateur d'accéder 
+ou de créer son compte client</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>741</x>
+      <y>414</y>
+      <w>111</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;350.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>375</y>
+      <w>66</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>_Page tableau de bord_
+--
+
+Regroupe toutes les informations
+importantes :
+- Les plats disponibles
+- Avis client
+- Commandepassées
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>414</y>
+      <w>42</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>849</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page plats_
+--
+halign=center
+
+CRUD des plats</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>918</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page de profil_
+--
+halign=center
+
+Permettra à l'utilisateur d'accéder 
+à ses données personnelles</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>843</x>
+      <y>414</y>
+      <w>48</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>843</x>
+      <y>414</y>
+      <w>117</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>370.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>387</y>
+      <w>66</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>_Page de profil_
+--
+halign=center
+
+Permettra à l'utilisateur d'accéder 
+à ses informations et les modifier
+s'il le souhaite</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>435</x>
+      <y>414</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;480.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>468</y>
+      <w>348</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1140.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1011</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page d'inscription / Connexion_
+--
+halign=center
+
+Permettra à l'utilisateur d'accéder 
+ou de créer son compte client</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>375</y>
+      <w>72</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>_Page tableau de bord_
+--
+Regroupe les informations 
+importantes :
+- Nombres de restaurants 
+- Nombres de commandes passées
+- Nombres de commandes en cours
+- Les revenues totaux (prix - 2.50€)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1155</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page plats_
+--
+halign=center
+
+CRUD des plats</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1224</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page membres_
+--
+halign=center
+
+CRUD des membres</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1293</x>
+      <y>393</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>_Page restaurants_
+--
+halign=center
+
+CRUD des restaurants </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1044</x>
+      <y>414</y>
+      <w>150</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;480.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>414</y>
+      <w>78</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1185</x>
+      <y>414</y>
+      <w>9</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1185</x>
+      <y>414</y>
+      <w>78</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1185</x>
+      <y>414</y>
+      <w>147</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>
