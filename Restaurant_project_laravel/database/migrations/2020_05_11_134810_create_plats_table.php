@@ -14,8 +14,12 @@ class CreatePlatsTable extends Migration
     public function up()
     {
         Schema::create('plats', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_plat');
             $table->timestamps();
+            $table->string('nom');
+            $table->float('prix');
+            $table->string('photo');
+            $table->float('note');
         });
     }
 

@@ -14,8 +14,13 @@ class CreateCommandesTable extends Migration
     public function up()
     {
         Schema::create('commandes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('num_commande');
             $table->timestamps();
+            $table->float('total');
+            $table->dateTime('date_commande');
+            $table->dateTime('date_livraison');
+            $table->string('adresse_livraison');
+            $table->string('etat');
         });
     }
 
