@@ -3,6 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Administrateurs;
+use App\Commande;
+use App\Membres;
+use App\Plats;
+use App\Restaurateurs;
+use App\Utilisateurs;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
