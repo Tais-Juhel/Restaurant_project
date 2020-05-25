@@ -7,34 +7,30 @@ use App\Membres;
 
 class MembresController extends Controller
 {
-    public function index()
-    {
-        return Membres::all();
+    public function index(){
+        $membres = Membres::all();
+        return view('administrateurs.membres.index', compact('membres'));
     }
 
-    public function show(Membres $membres)
-    {
-        return $membres;
+    public function edit(){
+        return view('administrateurs.membres.edit');
     }
 
-    public function store(Request $request)
-    {
-        $membres = Membres::create($request->all());
+    public function store(Request $request){
+        $contact = new Membres;
+        $contact->prenom = $request->get('prenom');
+        $contact->nom= $request->get('nom');
+        $contact->solde = $request->get('solde');
+        $contact->created_at = $request->get('create_at');
+        $contact->save();
 
-        return response()->json($membres, 201);
+        
+        return redirect()->route('membres.create');
     }
 
-    public function update(Request $request, Membres $membres)
+    public function show($contactId)
     {
-        $membres->update($request->all());
-
-        return response()->json($membres, 200);
-    }
-
-    public function delete(Membres $membres)
-    {
-        $membres->delete();
-
-        return response()->json(null, 204);
+        $contact = Membres::where('id', $membreId)->first();
+        return view('contacts.show', compact('membre'));
     }
 }

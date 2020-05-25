@@ -23,47 +23,47 @@ use App\Utilisateurs;
 
 
 //Administrateurs
-Route::get('administrateurs', 'AdministrateursController@index');
-Route::get('administrateurs/{administrateurs}', 'AdministrateursController@show');
-Route::post('administrateurs', 'AdministrateursController@store');
-Route::put('administrateurs/{administrateur}', 'AdministrateursController@update');
-Route::delete('administrateurs/{administrateurs}', 'AdministrateursController@delete');
+// Route::get('administrateurs', 'AdministrateursController@index');
+// Route::get('administrateurs/{administrateurs}', 'AdministrateursController@show');
+// Route::post('administrateurs', 'AdministrateursController@store');
+// Route::put('administrateurs/{administrateur}', 'AdministrateursController@update');
+// Route::delete('administrateurs/{administrateurs}', 'AdministrateursController@delete');
 
-//Commandes
-Route::get('commandes', 'CommandesController@index');
-Route::get('commandes/{commandes}', 'CommandesController@show');
-Route::post('commandes', 'CommandesController@store');
-Route::put('commandes/{commandes}', 'CommandesController@update');
-Route::delete('commandes/{commandes}', 'CommandesController@delete');
-
-
-//Membres
-Route::get('membres', 'MembresController@index');
-Route::get('membres/{membres}', 'MembresController@show');
-Route::post('membres', 'MembresController@store');
-Route::put('membres/{membres}', 'MembresController@update');
-Route::delete('membres/membres}', 'MembresController@delete');
+// //Commandes
+// Route::get('commandes', 'CommandesController@index');
+// Route::get('commandes/{commandes}', 'CommandesController@show');
+// Route::post('commandes', 'CommandesController@store');
+// Route::put('commandes/{commandes}', 'CommandesController@update');
+// Route::delete('commandes/{commandes}', 'CommandesController@delete');
 
 
-//Plats
-Route::get('plats', 'PlatsController@index');
-Route::get('plats/{plats}', 'PlatsController@show');
-Route::post('plats', 'PlatsController@store');
-Route::put('plats/{plats}', 'PlatsController@update');
-Route::delete('plats/{plats}', 'PlatsController@delete');
+// //Membres
+// Route::get('membres', 'MembresController@index');
+// Route::get('membres/{membres}', 'MembresController@show');
+// Route::post('membres', 'MembresController@store');
+// Route::put('membres/{membres}', 'MembresController@update');
+// Route::delete('membres/membres}', 'MembresController@delete');
 
 
-//Restaurateurs
-Route::get('restaurateurs', 'RestaurateursController@index');
-Route::get('restaurateurs/{restaurateurs}', 'RestaurateursController@show');
-Route::post('restaurateurs', 'RestaurateursController@store');
-Route::put('restaurateurs/{restaurateurs}', 'RestaurateursController@update');
-Route::delete('restaurateurs/{restaurateurs}', 'RestaurateursController@delete');
+// //Plats
+// Route::get('plats', 'PlatsController@index');
+// Route::get('plats/{plats}', 'PlatsController@show');
+// Route::post('plats', 'PlatsController@store');
+// Route::put('plats/{plats}', 'PlatsController@update');
+// Route::delete('plats/{plats}', 'PlatsController@delete');
 
 
-//Utilisateurs
-Route::get('utilisateurs', 'UtilisateursController@index');
-Route::get('utilisateurs/{utilisateurs}', 'UtilisateursController@show');
-Route::post('utilisateurs', 'UtilisateursController@store');
-Route::put('utilisateurs/{utilisateurs}', 'UtilisateursController@update');
-Route::delete('utilisateurs/{utilisateurs}', 'UtilisateursController@delete');
+// //Restaurateurs
+// Route::get('restaurateurs', 'RestaurateursController@index');
+// Route::get('restaurateurs/{restaurateurs}', 'RestaurateursController@show');
+// Route::post('restaurateurs', 'RestaurateursController@store');
+// Route::put('restaurateurs/{restaurateurs}', 'RestaurateursController@update');
+// Route::delete('restaurateurs/{restaurateurs}', 'RestaurateursController@delete');
+
+
+// //Utilisateurs
+// Route::get('utilisateurs', 'UtilisateursController@index');
+// Route::get('utilisateurs/{utilisateurs}', 'UtilisateursController@show');
+// Route::post('utilisateurs', 'UtilisateursController@store');
+// Route::put('utilisateurs/{utilisateurs}', 'UtilisateursController@update');
+// Route::delete('utilisateurs/{utilisateurs}', 'UtilisateursController@delete');
