@@ -18,6 +18,7 @@ class CreateMembresTable extends Migration
             $table->string('prenom');
             $table->string('nom');
             $table->float('solde');
+            $table->foreignId('id_utilisateur');
             $table->timestamps();
         });
     }

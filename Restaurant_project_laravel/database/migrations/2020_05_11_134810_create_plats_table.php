@@ -20,6 +20,7 @@ class CreatePlatsTable extends Migration
             $table->float('prix');
             $table->string('photo');
             $table->float('note');
+            $table->foreignId('id_restaurateur');
         });
     }
 

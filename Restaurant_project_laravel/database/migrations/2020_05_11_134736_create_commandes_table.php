@@ -21,6 +21,7 @@ class CreateCommandesTable extends Migration
             $table->dateTime('date_livraison');
             $table->string('adresse_livraison');
             $table->string('etat');
+            $table->foreignId('id_membre');
         });
     }
 

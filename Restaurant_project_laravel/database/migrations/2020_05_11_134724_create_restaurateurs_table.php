@@ -18,6 +18,7 @@ class CreateRestaurateursTable extends Migration
             $table->timestamps();
             $table->string('nom');
             $table->string('logo');
+            $table->foreignId('id_utilisateur');
         });
     }
 

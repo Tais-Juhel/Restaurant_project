@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Membres;
+use App\Utilisateurs;
 
 class MembresController extends Controller
 {
     public function index(){
         $membres = Membres::all();
-        return view('administrateurs.membres.index', compact('membres'));
+        $user = Utilisateurs::all();
+        return view('administrateurs.membres.index', compact('membres', 'user'));
     }
 
     public function edit($membreId){
