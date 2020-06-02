@@ -8,22 +8,19 @@
 <body>
     <h1>Modifier un Membre</h1>
 
-    <form method="post" action="{{ route('admin.membres.store') }}">
+    <form method="post" action="{{ route('admin.membre.update', $membre->id_membre) }}">
 
         @csrf
 
-        <label for="name">Nom du contact à créer : </label>
-        <input id="name" type="text" name="name">
-        <label for="firstname">Prénom du contact à créer : </label>
-        <input id="firstname" type="text" name="firstname">
+        <input type="hidden" name="_method" value="PUT">
 
-        <label for="number">Téléphone du contact à créer : </label>
-        <input id="number" type="text" name="number">
+        <label for="nom">Nom du contact à créer : </label>
+        <input id="nom" type="text" name="nom" value="{{ $membre->nom }}" require>
+        <label for="prenom">Prénom du contact à créer : </label>
+        <input id="prenom" type="text" name="prenom" value="{{ $membre->prenom }}" require>
 
-        <label for="email">Email du contact à créer : </label>
-        <input id="email" type="text" name="email">
-        <label for="email_verified_at">Email verifier du contact à créer : </label>
-        <input id="email_verified_at" type="text" name="email_verified_at">
+        <label for="solde">Solde du contact à créer : </label>
+        <input id="solde" type="number" name="solde" value="{{ $membre->solde }}" require>
 
         <input type="submit">
     </form>

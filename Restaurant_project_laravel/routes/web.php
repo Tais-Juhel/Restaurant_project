@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 //Page Administrateurs
 Route::get('/admin/membres', 'MembresController@index')->name('admin.membres.index');
-Route::get('/admin/membres/{id}/modify', 'MembresController@edit')->name('admin.membres.edit');
+Route::get('/admin/membre/{id}/modify', 'MembresController@edit')->name('admin.membre.edit');
+Route::put('/admin/membre/update/{id}', 'MembresController@update')->name('admin.membre.update');
