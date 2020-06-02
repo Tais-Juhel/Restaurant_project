@@ -14,13 +14,13 @@
 
         <input type="hidden" name="_method" value="PUT">
 
-        <label for="nom">Nom du contact à créer : </label>
+        <label for="nom">Nom : </label>
         <input id="nom" type="text" name="nom" value="{{ $membre->nom }}" require>
-        <label for="prenom">Prénom du contact à créer : </label>
+        <label for="prenom">Prénom : </label>
         <input id="prenom" type="text" name="prenom" value="{{ $membre->prenom }}" require>
 
-        <label for="solde">Solde du contact à créer : </label>
-        <input id="solde" type="number" name="solde" value="{{ $membre->solde }}" require>
+        <label for="solde">Solde : </label>
+        <input id="solde" type="number" name="solde" value="{{ $membre->solde }}" step="0.01" require>
 
         <input type="submit">
     </form>

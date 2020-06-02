@@ -7,34 +7,24 @@ use App\Plats;
 
 class PlatsController extends Controller
 {
-    public function index()
-    {
-        return Plats::all();
+    public function index(){
+        $plats = Plats::all();
+        return view('administrateurs.plats.index', compact('plats'));
     }
 
-    public function show(Plats $plats)
-    {
-        return $plats;
+    public function edit($platId){
+        $plat = Plats::where('id_plat', $platId)->first();
+        return view('administrateurs.plats.edit', compact('plat'));
     }
 
-    public function store(Request $request)
-    {
-        $plats = Plats::create($request->all());
+    public function update(Request $request, $platId){
+        $plat = Plats::where('id_plat', $platId)->first();
+        $plat->nom = $request->get('nom');
+        $plat->photo= $request->get('photo');
+        $plat->prix = $request->get('prix');
+        $plat->note = $request->get('note');
+        $plat->save();
 
-        return response()->json($plats, 201);
-    }
-
-    public function update(Request $request, Plats $plats)
-    {
-        $plats->update($request->all());
-
-        return response()->json($plats, 200);
-    }
-
-    public function delete(Plats $plats)
-    {
-        $plats->delete();
-
-        return response()->json(null, 204);
+        return redirect()->route('admin.plat.edit', $plat->id_plat);
     }
 }
