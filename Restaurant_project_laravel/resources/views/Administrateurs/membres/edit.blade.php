@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1>Modifier un Membre</h1>
+    
+    <a href="{{ route('admin.membres.index') }}">Retour à l'index</a>
 
     <form method="post" action="{{ route('admin.membre.update', $membre->id_membre) }}">
 

@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1>Modifier un Plat</h1>
+    
+    <a href="{{ route('admin.plats.index') }}">Retour à l'index</a>
 
     <form method="post" action="{{ route('admin.plat.update', $plat->id_plat) }}">
 

@@ -25,3 +25,7 @@ Route::put('/admin/membre/update/{id}', 'MembresController@update')->name('admin
 Route::get('/admin/plats', 'PlatsController@index')->name('admin.plats.index');
 Route::get('/admin/plat/{id}/modify', 'PlatsController@edit')->name('admin.plat.edit');
 Route::put('/admin/plat/update/{id}', 'PlatsController@update')->name('admin.plat.update');
+//---
+Route::get('/admin/restaurateurs', 'RestaurateursController@index')->name('admin.restaurateurs.index');
+Route::get('/admin/restaurateur/{id}/modify', 'RestaurateursController@edit')->name('admin.restaurateur.edit');
+Route::put('/admin/restaurateur/update/{id}', 'RestaurateursController@update')->name('admin.restaurateur.update');
