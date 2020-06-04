@@ -9,12 +9,12 @@ class RestaurateursController extends Controller
 {
     public function index(){
         $restaurateurs = Restaurateurs::all();
-        return view('administrateurs.restaurateurs.index', compact('restaurateurs'));
+        return view('restaurateurs.index', compact('restaurateurs'));
     }
 
     public function edit($restaurateurId){
         $restaurateur = Restaurateurs::where('id_restaurateur', $restaurateurId)->first();
-        return view('administrateurs.restaurateurs.edit', compact('restaurateur'));
+        return view('restaurateurs.edit', compact('restaurateur'));
     }
 
     public function update(Request $request, $restaurateurId){
@@ -23,6 +23,6 @@ class RestaurateursController extends Controller
         $restaurateur->logo= $request->get('logo');
         $restaurateur->save();
 
-        return redirect()->route('admin.restaurateur.edit', $restaurateur->id_restaurateur);
+        return redirect()->route('restaurateurs.edit', $restaurateur->id_restaurateur);
     }
 }

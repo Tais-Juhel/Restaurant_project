@@ -9,12 +9,12 @@ class PlatsController extends Controller
 {
     public function index(){
         $plats = Plats::all();
-        return view('administrateurs.plats.index', compact('plats'));
+        return view('plats.index', compact('plats'));
     }
 
     public function edit($platId){
         $plat = Plats::where('id_plat', $platId)->first();
-        return view('administrateurs.plats.edit', compact('plat'));
+        return view('plats.edit', compact('plat'));
     }
 
     public function update(Request $request, $platId){
@@ -25,6 +25,6 @@ class PlatsController extends Controller
         $plat->note = $request->get('note');
         $plat->save();
 
-        return redirect()->route('admin.plat.edit', $plat->id_plat);
+        return redirect()->route('plats.edit', $plat->id_plat);
     }
 }

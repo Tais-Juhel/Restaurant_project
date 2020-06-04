@@ -11,12 +11,12 @@ class MembresController extends Controller
     public function index(){
         $membres = Membres::all();
         $user = Utilisateurs::all();
-        return view('administrateurs.membres.index', compact('membres', 'user'));
+        return view('membres.index', compact('membres', 'user'));
     }
 
     public function edit($membreId){
         $membre = Membres::where('id_membre', $membreId)->first();
-        return view('administrateurs.membres.edit', compact('membre'));
+        return view('membres.edit', compact('membre'));
     }
 
     public function update(Request $request, $membreId){
@@ -26,7 +26,7 @@ class MembresController extends Controller
         $membre->solde = $request->get('solde');
         $membre->save();
 
-        return redirect()->route('admin.membre.edit', $membre->id_membre);
+        return redirect()->route('membres.edit', $membre->id_membre);
     }
 
     public function store(Request $request){
