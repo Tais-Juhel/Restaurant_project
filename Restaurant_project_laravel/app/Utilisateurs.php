@@ -9,6 +9,6 @@ class Utilisateurs extends Model
     protected $name = "Utilisateurs";
     
     protected $fillable = [
-        'pseudo','mdp','type','mail','adresse'
+        'pseudo','mdp','type','mail'
     ];
 }

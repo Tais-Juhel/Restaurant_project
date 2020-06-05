@@ -44,3 +44,11 @@ Route::put('/membre/plats/update/{id}', 'PlatsController@update')->name('plats.u
 Route::get('/membre/restaurateurs', 'RestaurateursController@index')->name('restaurateurs.index');
 Route::get('/membre/restaurateurs/{id}/modify', 'RestaurateursController@edit')->name('restaurateurs.edit');
 Route::put('/membre/restaurateurs/update/{id}', 'RestaurateursController@update')->name('restaurateurs.update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
