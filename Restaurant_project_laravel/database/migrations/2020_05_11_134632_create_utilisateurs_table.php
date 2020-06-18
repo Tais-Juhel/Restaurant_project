@@ -18,7 +18,6 @@ class CreateUtilisateursTable extends Migration
             $table->string('pseudo');
             $table->string('mdp');
             $table->string('mail');
-            $table->string('adresse');
             $table->timestamps();
         });
     }

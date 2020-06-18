@@ -1,0 +1,104 @@
+//Colors
+$colorP: #C333CE;
+$colorS: #0FCFDE;
+
+body{
+    margin: 60px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        height: 60px;
+        background-color: $colorP;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 40px;
+            margin-left: 35px;
+            z-index: 100;
+        }
+
+        .connectLink{
+            margin-right: 35px;
+            width: 100px;
+            max-height: 40px;
+            background-color: white;
+            text-align: center;
+            font-size: 11px;
+            padding: 5px 0;
+            border-radius: 100px;
+            text-decoration: none;
+            color: grey;
+        }
+
+        .burgerMenu{
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: $colorS;
+            transition: all 1s;
+            z-index: 99;
+
+            .menuList{
+                margin-top: 150px;
+                margin-left: 30px;
+                list-style: none;
+
+                .linkList{
+                    display: block;
+                    text-decoration: none;
+                    color: white;
+                    padding: 10px 0;
+                }
+            }
+        }
+        .open{
+            left: 0;
+        }
+    }
+
+    .couverture{
+        height: 275px;
+        width: 100%;
+        background-color: $colorS;
+    }
+}
+
+.restaurateurs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+
+    li{
+        width: 435px;
+        height: 275px;
+        margin-top: 100px;
+
+        .cadre{
+            overflow: hidden;
+            width: 100%;
+            height: 75%;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        h4, a{
+            margin: 15px;
+        }
+    }
+}
