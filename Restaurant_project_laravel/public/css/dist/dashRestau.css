@@ -73,35 +73,96 @@ h1 {
   margin: 50px 0 0 100px;
 }
 
-.restaurateurs {
+.plats {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+}
+
+.plats a {
+  text-decoration: none;
+}
+
+.plats .platList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
   list-style: none;
   padding: 0;
 }
 
-.restaurateurs li {
-  width: 435px;
+.plats .platList .plat {
+  width: 70%;
   height: 275px;
   margin-top: 100px;
 }
 
-.restaurateurs li .cadre {
+.plats .platList .plat .cadre {
   overflow: hidden;
   width: 100%;
   height: 75%;
 }
 
-.restaurateurs li .cadre img {
+.plats .platList .plat .cadre img {
   width: 100%;
 }
 
-.restaurateurs li h4, .restaurateurs li p {
-  margin: 15px;
-  color: black;
+.plats .platList .plat .info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.restaurateurs li > a {
+.plats .platList .plat .info .name {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.plats .platList .plat .info .name h4 {
+  color: black;
+  font-size: 20px;
+  margin: 10px 25px;
+}
+
+.plats .platList .plat .info .name p {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 10px 25px;
+  color: lightgray;
+}
+
+.plats .platList .plat .info .note {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.plats .platList .plat .info .note .noteTittle {
+  color: darkgrey;
+  font-size: 16px;
+  margin: 10px 25px;
+}
+
+.plats .platList .plat .info .note .note10 {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 10px 25px;
+  color: lightgray;
+}
+
+.plats .addButton {
   text-decoration: none;
+  text-align: center;
+  width: 100px;
+  padding: 15px 0;
+  margin: 50px auto;
+  background-color: #C333CE;
+  color: white;
+  border-radius: 100px;
 }

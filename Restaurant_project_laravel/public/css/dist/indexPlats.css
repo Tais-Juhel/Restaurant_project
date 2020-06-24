@@ -1,5 +1,5 @@
 body {
-  margin: 60px 0 0 0;
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -73,7 +73,7 @@ h1 {
   margin: 50px 0 0 100px;
 }
 
-.restaurateurs {
+.plats {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -81,27 +81,27 @@ h1 {
   padding: 0;
 }
 
-.restaurateurs li {
+.plats li {
   width: 435px;
   height: 275px;
   margin-top: 100px;
 }
 
-.restaurateurs li .cadre {
+.plats li .cadre {
   overflow: hidden;
   width: 100%;
   height: 75%;
 }
 
-.restaurateurs li .cadre img {
+.plats li .cadre img {
   width: 100%;
 }
 
-.restaurateurs li h4, .restaurateurs li p {
+.plats li h4, .plats li p {
   margin: 15px;
   color: black;
 }
 
-.restaurateurs li > a {
+.plats li > a {
   text-decoration: none;
 }

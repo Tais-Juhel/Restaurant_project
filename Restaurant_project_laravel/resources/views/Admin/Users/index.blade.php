@@ -27,7 +27,7 @@
                             @can('edit-users')
                             <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary">Editer</a>
                             @endcan
-                            @can('delete-users')
+                            @can('admin-users')
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')

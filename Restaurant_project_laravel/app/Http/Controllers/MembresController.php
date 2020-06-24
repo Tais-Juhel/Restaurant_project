@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Role;
+use App\User;
 use App\Membres;
-use App\Utilisateurs;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MembresController extends Controller
 {
     public function index(){
         $membres = Membres::all();
-        $user = Utilisateurs::all();
+        $user = User::all();
         return view('membres.index', compact('membres', 'user'));
     }
 
@@ -29,16 +31,26 @@ class MembresController extends Controller
         return redirect()->route('membres.edit', $membre->id_membre);
     }
 
+    public function create(){
+        return view('membres.create');
+    }
+
     public function store(Request $request){
+        $user = Auth::user();
+
         $membre = new Membres;
         $membre->prenom = $request->get('prenom');
         $membre->nom= $request->get('nom');
-        $membre->solde = $request->get('solde');
-        $membre->created_at = $request->get('create_at');
+        $membre->solde = "0.0";
+        $membre->adresse = $request->get('adresse');
+        $membre->id_utilisateur = $user->id;
         $membre->save();
 
+        $role = Role::select('id')->where('name', 'membre')->first();
+        $user->roles()->sync($request->roles);
+        $user->roles()->attach($role);
         
-        return redirect()->route('membres.create');
+        return redirect()->route('restaurateurs.index');
     }
 
     public function show($membreId)

@@ -2,14 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Role;
 use App\Restaurateurs;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurateursController extends Controller
 {
     public function index(){
         $restaurateurs = Restaurateurs::all();
-        return view('restaurateurs.index', compact('restaurateurs'));
+        $auth = Auth::user();
+        return view('restaurateurs.index', compact('restaurateurs', 'auth'));
+    }
+
+    public function create(){
+        return view('restaurateurs.create');
+    }
+
+    public function store(Request $request){
+        $user = Auth::user();
+
+        $restau = new Restaurateurs;
+        $restau->nom = $request->get('nom');
+        $restau->logo = $request->get('logo');
+        $restau->id_utilisateur = $user->id;
+        $restau->save();
+
+        $role = Role::select('id')->where('name', 'restau')->first();
+        $user->roles()->sync($request->roles);
+        $user->roles()->attach($role);
+
+        return redirect()->route('restau.dashbord');
     }
 
     public function edit($restaurateurId){

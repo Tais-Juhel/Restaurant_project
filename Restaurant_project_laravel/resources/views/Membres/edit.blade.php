@@ -8,9 +8,9 @@
 <body>
     <h1>Modifier un Membre</h1>
     
-    <a href="{{ route('admin.membres.index') }}">Retour à l'index</a>
+    <a href="{{ route('membres.index') }}">Retour à l'index</a>
 
-    <form method="post" action="{{ route('admin.membre.update', $membre->id_membre) }}">
+    <form method="post" action="{{ route('membres.update', $membre->id_membre) }}">
 
         @csrf
 

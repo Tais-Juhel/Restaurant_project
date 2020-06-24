@@ -3,7 +3,7 @@ $colorP: #C333CE;
 $colorS: #0FCFDE;
 
 body{
-    margin: 60px 0 0 0;
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -79,7 +79,7 @@ h1{
     margin: 50px 0 0 100px;
 }
 
-.restaurateurs{
+.plats{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

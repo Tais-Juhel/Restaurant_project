@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Plats;
+use App\Restaurateurs;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlatsController extends Controller
 {
-    public function index(){
-        $plats = Plats::all();
-        return view('plats.index', compact('plats'));
+    public function index($restau){
+        $auth = Auth::user();
+        $restaurant = Restaurateurs::where('nom', $restau)->first();
+        $plats = Plats::all()->where('id_restaurateur', $restaurant->id_restaurateur);
+        return view('plats.index', compact('plats', 'restaurant', 'auth'));
     }
 
     public function edit($platId){

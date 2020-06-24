@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Index des Plats</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/dist/indexPlats.css">
+    <link rel="stylesheet" href="css/dist/dashRestau.css">
+    <title>Document</title>
 </head>
 <body>
-<header>
+    <header>
         <nav>
             <img src="../img/open-menu.svg" alt="burger menu" onclick="menu()">
             @if($auth == null)
@@ -39,18 +41,31 @@
         </div>
     </header>
 
-    <h1>Liste des plats de {{ $restaurant->nom }}</h1>
+    <h1>Listes des plats</h1>
 
-    <ul class='plats'>
-        @foreach($plats as $plat)
-        <li>
-            <div class="cadre"><img src="../img/mcdo.jpg" alt="img/mcdo.jpg"/></div>
-            <h4>{{ $plat->nom }}</h4>
-            <p>Frais de port : 2.50€</p>
-        </li>
-        @endforeach
-    </ul>
+    <div class="plats">
+        <ul class="platList">
+            @foreach($plats as $plat)
+                <li class="plat"><a href="{{ route('plats.edit', $plat->id_plat) }}">
+                    <div class="cadre">
+                        <img src="../img/mcdo.jpg" alt="{{ $plat->photo }}">
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            <h4>{{ $plat->nom }}</h4>
+                            <p>{{ $plat->prix }}€</p>
+                        </div>
+                        <div class="note">
+                            <p class="noteTittle">Note:</p>
+                            <p class="note10">{{ $plat->note }}/10</p>
+                        </div>
+                    </div>
+                </a></li>
+            @endforeach
+        </ul>
+        <a class="addButton" href="#">Ajouter</a>
+    </div>
 
-    <script src="../js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

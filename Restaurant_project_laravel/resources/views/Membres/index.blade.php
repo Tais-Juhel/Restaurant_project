@@ -9,7 +9,7 @@
     <ul>
         @foreach($membres as $membre)
         <li>
-            {{ $membre->prenom }} <a href="{{ route('admin.membre.edit', $membre->id_membre) }}" title="{{ $membre->prenom }}">Modifier</a>
+            {{ $membre->prenom }} <a href="{{ route('membres.edit', $membre->id_membre) }}" title="{{ $membre->prenom }}">Modifier</a>
         </li>
         @endforeach
     </ul>

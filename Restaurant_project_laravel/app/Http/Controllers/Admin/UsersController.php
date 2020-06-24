@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Role;
 use App\User;
+use App\Membres;
+use App\Restaurateurs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class UsersController extends Controller
@@ -22,6 +25,40 @@ class UsersController extends Controller
     {
         $users = User::all();
         return view('admin.users.index')->with('users', $users);
+    }
+
+    public function profil(){
+        $user = Auth::user();
+        $profil;
+        
+        if($user->type == '2'){
+            $profil = Restaurateurs::where('id_utilisateur', $user->id)->first();
+        }elseif($user->type == '3'){
+            $profil = Membres::where('id_utilisateur', $user->id)->first();
+        }
+
+        return view('admin.users.profil', compact('user', 'profil'));
+    }
+
+    public function updateA(Request $request){
+        $user = Auth::user();
+        $membre = Membres::where('id_utilisateur', $user->id)->first();
+        $restau = Restaurateurs::where('id_utilisateur', $user->id)->first();
+
+        if($membre == !null){
+            $membre->prenom = $request->get('prenom');
+            $membre->nom= $request->get('nom');
+            $membre->save();
+        }else{
+            $restau->nom= $request->get('nom');
+            $restau->logo= $request->get('logo');
+        }
+
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->save();
+
+        return redirect()->route('auth.show');
     }
 
     /**
