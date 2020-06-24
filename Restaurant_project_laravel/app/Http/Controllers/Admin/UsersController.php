@@ -52,6 +52,7 @@ class UsersController extends Controller
         }else{
             $restau->nom= $request->get('nom');
             $restau->logo= $request->get('logo');
+            $restau->save();
         }
 
         $user->name = $request->get('name');

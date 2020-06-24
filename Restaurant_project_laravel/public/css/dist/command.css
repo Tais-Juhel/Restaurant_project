@@ -78,99 +78,51 @@ header .couverture img {
 }
 
 h1 {
-  margin: 50px 0 0 100px;
+  margin: 50px 0;
+  text-align: center;
 }
 
-.plats {
+form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: center;
+  justify-content: space-between;
 }
 
-.plats a {
-  text-decoration: none;
+form .command {
+  width: 150px;
+  margin: 0 auto;
+  padding: 10px 0;
+  background-color: #C333CE;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.plats .platList {
+.billet {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: center;
-  list-style: none;
+  justify-content: center;
+  margin: 0;
   padding: 0;
 }
 
-.plats .platList .plat {
-  width: 70%;
-  height: 275px;
-  margin-top: 100px;
+.billet li {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 10px 0;
+  background-color: lightgreen;
+  width: 45%;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 
-.plats .platList .plat .cadre {
-  overflow: hidden;
-  width: 100%;
-  height: 75%;
-}
-
-.plats .platList .plat .cadre img {
-  width: 100%;
-}
-
-.plats .platList .plat .info {
+.billet li .info {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.plats .platList .plat .info .name {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.plats .platList .plat .info .name h4 {
-  color: black;
-  font-size: 20px;
-  margin: 10px 25px;
-}
-
-.plats .platList .plat .info .name p {
-  font-size: 35px;
-  font-weight: 700;
-  margin: 10px 25px;
-  color: lightgray;
-}
-
-.plats .platList .plat .info .note {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: right;
-}
-
-.plats .platList .plat .info .note .noteTittle {
-  color: darkgrey;
-  font-size: 16px;
-  margin: 10px 25px;
-}
-
-.plats .platList .plat .info .note .note10 {
-  font-size: 35px;
-  font-weight: 700;
-  margin: 10px 25px;
-  color: lightgray;
-}
-
-.plats .addButton {
-  text-decoration: none;
-  text-align: center;
-  width: 100px;
-  padding: 15px 0;
-  margin: 50px auto;
-  background-color: #C333CE;
-  color: white;
-  border-radius: 100px;
+  width: 90%;
 }

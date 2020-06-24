@@ -17,8 +17,8 @@ class CreateCommandesTable extends Migration
             $table->increments('num_commande');
             $table->timestamps();
             $table->float('total');
-            $table->dateTime('date_commande');
-            $table->dateTime('date_livraison');
+            $table->string('date_commande');
+            $table->string('date_livraison');
             $table->string('adresse_livraison');
             $table->string('etat');
             $table->foreignId('id_membre');

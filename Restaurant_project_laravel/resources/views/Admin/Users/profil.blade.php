@@ -18,7 +18,7 @@
                                 <label class="col-md-4 col-form-label text-md-right" for="email">Email</label>
                                 <div class="col-md-6"><input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}"></div>
                             </div>
-                            @can('restau_users')
+                            @can('restau-users')
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="logo">Logo</label>
                                 <div class="col-md-6"><input type="text" class="form-control" id="logo" name="logo" value="{{ $profil->logo }}"></div>

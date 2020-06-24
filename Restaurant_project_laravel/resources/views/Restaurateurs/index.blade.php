@@ -13,28 +13,29 @@
             <a class="connectLink" href="{{ route('register') }}">Connexion / Inscription</a>
             @endif
             @if($auth == !null)
-            <a class="connectLink" href="#">{{ $auth->name }}</a>
+            <a class="connectLink" href="{{ route('auth.show') }}">{{ $auth->name }}</a>
             @endif
             <div class="burgerMenu">
-                <ul class="menuList">
+            <ul class="menuList">
                     @can('restau-users')
-                    <li><a class="linkList" href="#">Profil</a></li>
-                    <li><a class="linkList" href="#">Mes plats</a></li>
-                    <li><a class="linkList" href="#">Tableau de bord</a></li>
+                    <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
+                    <li><a class="linkList" href="{{ route('restau.dashbord') }}">Tableau de bord</a></li>
                     @endcan
                     @can('membre-users')
-                    <li><a class="linkList" href="#">Profil</a></li>
-                    <li><a class="linkList" href="#">Restaurants</a></li>
+                    <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
+                    <li><a class="linkList" href="{{ route('restaurateurs.index') }}">Restaurants</a></li>
                     @endcan
                     @can('admin-users')
                     <li><a class="linkList" href="#">Tableau de bord</a></li>
-                    <li><a class="linkList" href="#">Utilisateurs</a></li>
+                    <li><a class="linkList" href="{{ route('admin.users.index') }}">Utilisateurs</a></li>
                     @endcan
                 </ul>
             </div>
         </nav>
         <div class="couverture">
-            <img src="" alt="logoCouverture">
+            <div class="img">
+                <img src="../img/logo.png" alt="logoCouverture">
+            </div>
         </div>
     </header>
 

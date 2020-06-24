@@ -31,56 +31,56 @@ class UsersTableSeeder extends Seeder
             'name' => 'membre',
             'email' => 'membre@membre.com',
             'password' => Hash::make('password'),
-            'type' => '2'
+            'type' => '3'
         ]);
         
         $restau = User::create([
             'name' => 'restaurateur',
             'email' => 'restau@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $restau1 = User::create([
             'name' => 'SoupoChou',
             'email' => 'soupochou@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $restau2 = User::create([
             'name' => 'Mcdo',
             'email' => 'mcdo@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $restau3 = User::create([
             'name' => 'KFC',
             'email' => 'kfc@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $restau4 = User::create([
             'name' => 'restogogo',
             'email' => 'restogogo@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $restau5 = User::create([
             'name' => 'ALaMaison',
             'email' => 'a-la-maison@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $restau6 = User::create([
             'name' => 'LeToubib',
             'email' => 'le-toubib@restau.com',
             'password' => Hash::make('password'),
-            'type' => '3'
+            'type' => '2'
         ]);
 
         $adminRole = Role::where('name', 'admin')->first();

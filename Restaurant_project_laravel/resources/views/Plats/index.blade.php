@@ -19,37 +19,52 @@
             <div class="burgerMenu">
                 <ul class="menuList">
                     @can('restau-users')
-                    <li><a class="linkList" href="#">Profil</a></li>
-                    <li><a class="linkList" href="#">Mes plats</a></li>
-                    <li><a class="linkList" href="#">Tableau de bord</a></li>
+                    <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
+                    <li><a class="linkList" href="{{ route('plats.index') }}">Tableau de bord</a></li>
                     @endcan
                     @can('membre-users')
-                    <li><a class="linkList" href="#">Profil</a></li>
-                    <li><a class="linkList" href="#">Restaurants</a></li>
+                    <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
+                    <li><a class="linkList" href="{{ route('restaurateurs.index') }}">Restaurants</a></li>
                     @endcan
                     @can('admin-users')
                     <li><a class="linkList" href="#">Tableau de bord</a></li>
-                    <li><a class="linkList" href="#">Utilisateurs</a></li>
+                    <li><a class="linkList" href="{{ route('admin.users.index') }}">Utilisateurs</a></li>
                     @endcan
                 </ul>
             </div>
         </nav>
         <div class="couverture">
-            <img src="" alt="logoCouverture">
+            <div class="img">
+                <img src="../img/logo.png" alt="logoCouverture">
+            </div>
         </div>
     </header>
 
     <h1>Liste des plats de {{ $restaurant->nom }}</h1>
 
-    <ul class='plats'>
-        @foreach($plats as $plat)
-        <li>
-            <div class="cadre"><img src="../img/mcdo.jpg" alt="img/mcdo.jpg"/></div>
-            <h4>{{ $plat->nom }}</h4>
-            <p>Frais de port : 2.50€</p>
-        </li>
-        @endforeach
-    </ul>
+    <form action="{{ route('commandes.create', $restaurant->id_restaurateur) }}" method="POST">
+        @csrf
+        @method('POST')
+        <ul class='plats'>
+            @foreach($plats as $plat)
+            <li>
+                <input class="checkbox" type="checkbox" name="{{ $plat->id_plat }}" id="{{ $plat->id_plat }}" value="{{ $plat->id_plat }}">
+                <div class="cadre"><img src="../img/mcdo.jpg" alt="img/mcdo.jpg"/></div>
+                <div class="info">
+                    <div class="name">
+                        <h4>{{ $plat->nom }}</h4>
+                        <p>Prix : {{ $plat->prix }} / Frais de port : 2.50€</p>
+                    </div>
+                    <div class="num">
+                        <p class="note">{{ $plat->note }}/10</p>
+                    </div>
+                </div>
+            </li>
+            @endforeach
+        </ul>
+
+        <input class="command" type="submit" value="Commander">
+    </form>
 
     <script src="../js/index.js"></script>
 </body>

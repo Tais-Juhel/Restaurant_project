@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/dist/dashRestau.css">
+    <link rel="stylesheet" href="../../css/dist/command.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav>
-            <img src="../img/open-menu.svg" alt="burger menu" onclick="menu()">
+            <img src="../../img/open-menu.svg" alt="burger menu" onclick="menu()">
             @if($auth == null)
             <a class="connectLink" href="{{ route('register') }}">Connexion / Inscription</a>
             @endif
             @if($auth == !null)
             <a class="connectLink" href="{{ route('auth.show') }}">{{ $auth->name }}</a>
             @endif
-            
             <div class="burgerMenu">
-                <ul class="menuList">
+            <ul class="menuList">
                     @can('restau-users')
                     <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
                     <li><a class="linkList" href="{{ route('restau.dashbord') }}">Tableau de bord</a></li>
@@ -37,36 +36,45 @@
         </nav>
         <div class="couverture">
             <div class="img">
-                <img src="../img/logo.png" alt="logoCouverture">
+                <img src="../../img/logo.png" alt="logoCouverture">
             </div>
         </div>
     </header>
 
-    <h1>Listes des plats</h1>
+    <h1>Ma commande chez {{ $restau->nom }}</h1>
 
-    <div class="plats">
-        <ul class="platList">
+    <form action="{{ route('commandes.store') }}" method="POST">
+        @csrf
+        @method('POST')
+        <ul class="billet">
+            <script>
+                let total = 0;
+            </script>
             @foreach($plats as $plat)
-                <li class="plat"><a href="{{ route('plats.edit', $plat->id_plat) }}">
-                    <div class="cadre">
-                        <img src="../img/mcdo.jpg" alt="{{ $plat->photo }}">
-                    </div>
-                    <div class="info">
-                        <div class="name">
-                            <h4>{{ $plat->nom }}</h4>
-                            <p>{{ $plat->prix }}€</p>
-                        </div>
-                        <div class="note">
-                            <p class="noteTittle">Note:</p>
-                            <p class="note10">{{ $plat->note }}/10</p>
-                        </div>
-                    </div>
-                </a></li>
+            <script>
+                total = total + {{ $plat->prix }};
+            </script>
+            <li>
+                <input type="hidden" name="{{ $plat->id_plat }}" id="{{ $plat->id_plat }}" value="{{ $plat->id_plat }}">
+                <div class="info">
+                    <p class="nom"><strong>{{ $plat->nom }}</strong></p>
+                    <p class="prix">{{ $plat->prix }} €</p>
+                </div>
+            </li>
             @endforeach
+            <li>
+                <input type="hidden" name="total" id="total">
+                <div class="info">
+                    <p class="nom"><strong>Total</strong></p>
+                    <p class="prix" id="prix"></p>
+                </div>
+                <script>
+                    document.getElementById('total').value = total;
+                    document.getElementById('prix').innerHTML = total + " €";
+                </script>
+            </li>
         </ul>
-        <a class="addButton" href="{{ route('plats.create') }}">Ajouter</a>
-    </div>
-
-    <script src="js/index.js"></script>
+        <input class="command" type="submit" value="Confirmer">
+    </form>
 </body>
 </html>

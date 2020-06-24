@@ -64,9 +64,17 @@ header nav .open {
 }
 
 header .couverture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   height: 275px;
   width: 100%;
   background-color: #0FCFDE;
+}
+
+header .couverture img {
+  width: 80px;
 }
 
 h1 {

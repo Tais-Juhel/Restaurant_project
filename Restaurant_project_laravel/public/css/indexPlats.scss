@@ -4,6 +4,7 @@ $colorS: #0FCFDE;
 
 body{
     margin: 0;
+    margin-top: 50px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -69,14 +70,39 @@ header{
     }
 
     .couverture{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 275px;
         width: 100%;
         background-color: $colorS;
+
+        img{
+            width: 80px;
+        }
     }
 }
 
 h1{
     margin: 50px 0 0 100px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+
+    .command{
+        width: 150px;
+        margin: 0 auto;
+        color: white;
+        background-color: $colorP;
+        padding: 10px 0;
+        border-radius: 100px;
+        font-family: 'Montserrat', sans-serif;
+        border: none;
+    }
 }
 
 .plats{
@@ -85,11 +111,18 @@ h1{
     justify-content: space-around;
     list-style: none;
     padding: 0;
+    width: 100%;
 
     li{
         width: 435px;
         height: 275px;
         margin-top: 100px;
+        position: relative;
+
+        .checkbox{
+            position: absolute;
+            padding: 100%;
+        }
 
         .cadre{
             overflow: hidden;
@@ -101,13 +134,43 @@ h1{
             }
         }
 
-        h4, p{
-            margin: 15px;
-            color: black;
-        }
+        .info{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 60px;
 
-        &>a{
-            text-decoration: none;
+            .name{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                h4{
+                    font-size: 20px;
+                    color: black;
+                    margin: 0 25px;
+                }
+    
+                p{
+                    font-size: 12px;
+                    color: grey;
+                    margin: 0 25px;
+                }
+            }
+
+            .num{
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+
+                .note{
+                    font-size: 30px;
+                    color: lightgrey;
+                    margin: 0 25px;
+                    font-weight: 700;
+                }
+            }
         }
     }
 }
