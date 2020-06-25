@@ -14,38 +14,38 @@ class RestauTableSeeder extends Seeder
     {
         Restaurateurs::create([
             'nom' => 'SoupoChou',
-            'logo' => '#',
-            'id_utilisateur' => '4'
+            'logo' => 'restau1.png',
+            'id_utilisateur' => '3'
         ]);
 
         Restaurateurs::create([
             'nom' => 'Mcdo',
-            'logo' => '#',
-            'id_utilisateur' => '5'
+            'logo' => 'restau2.jpg',
+            'id_utilisateur' => '4'
         ]);
 
         Restaurateurs::create([
             'nom' => 'KFC',
-            'logo' => '#',
-            'id_utilisateur' => '6'
+            'logo' => 'restau1.png',
+            'id_utilisateur' => '5'
         ]);
         
         Restaurateurs::create([
             'nom' => 'RestoGoGo',
-            'logo' => '#',
-            'id_utilisateur' => '7'
+            'logo' => 'restau2.jpg',
+            'id_utilisateur' => '6'
         ]);
 
         Restaurateurs::create([
             'nom' => 'A la maison',
-            'logo' => '#',
-            'id_utilisateur' => '8'
+            'logo' => 'restau1.png',
+            'id_utilisateur' => '7'
         ]);
 
         Restaurateurs::create([
             'nom' => 'Le Toubib',
-            'logo' => '#',
-            'id_utilisateur' => '9'
+            'logo' => 'restau2.jpg',
+            'id_utilisateur' => '8'
         ]);
     }
 }

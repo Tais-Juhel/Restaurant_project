@@ -32,7 +32,7 @@ class UsersController extends Controller
         $profil;
         
         if($user->type == '2'){
-            $profil = Restaurateurs::where('id_utilisateur', $user->id)->first();
+            $profil = Restaurateurs::where('id_utilisateur', $user->id)->first();   
         }elseif($user->type == '3'){
             $profil = Membres::where('id_utilisateur', $user->id)->first();
         }

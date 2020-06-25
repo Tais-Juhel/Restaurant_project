@@ -30,7 +30,6 @@
                     <li><a class="linkList" href="{{ route('commandes.index') }}">Mes commandes</a></li>
                     @endcan
                     @can('admin-users')
-                    <li><a class="linkList" href="#">Tableau de bord</a></li>
                     <li><a class="linkList" href="{{ route('admin.users.index') }}">Utilisateurs</a></li>
                     @endcan
                 </ul>
@@ -50,7 +49,7 @@
             @foreach($plats as $plat)
                 <li class="plat"><a href="{{ route('plats.edit', $plat->id_plat) }}">
                     <div class="cadre">
-                        <img src="../img/mcdo.jpg" alt="{{ $plat->photo }}">
+                        <img src="../img/{{ $plat->photo }}" alt="{{ $plat->photo }}">
                     </div>
                     <div class="info">
                         <div class="name">

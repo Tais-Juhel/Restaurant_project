@@ -33,13 +33,6 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('password'),
             'type' => '3'
         ]);
-        
-        $restau = User::create([
-            'name' => 'restaurateur',
-            'email' => 'restau@restau.com',
-            'password' => Hash::make('password'),
-            'type' => '2'
-        ]);
 
         $restau1 = User::create([
             'name' => 'SoupoChou',
@@ -89,7 +82,6 @@ class UsersTableSeeder extends Seeder
 
         $admin->roles()->attach($adminRole);
         $membre->roles()->attach($membreRole);
-        $restau->roles()->attach($restauRole);
         $restau1->roles()->attach($restauRole);
         $restau2->roles()->attach($restauRole);
         $restau3->roles()->attach($restauRole);

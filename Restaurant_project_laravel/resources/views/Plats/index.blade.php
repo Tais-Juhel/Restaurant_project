@@ -28,7 +28,6 @@
                     <li><a class="linkList" href="{{ route('commandes.index') }}">Mes commandes</a></li>
                     @endcan
                     @can('admin-users')
-                    <li><a class="linkList" href="#">Tableau de bord</a></li>
                     <li><a class="linkList" href="{{ route('admin.users.index') }}">Utilisateurs</a></li>
                     @endcan
                 </ul>
@@ -50,7 +49,7 @@
             @foreach($plats as $plat)
             <li>
                 <input class="checkbox" type="checkbox" name="{{ $plat->id_plat }}" id="{{ $plat->id_plat }}" value="{{ $plat->id_plat }}">
-                <div class="cadre"><img src="../img/mcdo.jpg" alt="img/mcdo.jpg"/></div>
+                <div class="cadre"><img src="../img/{{ $plat->photo }}" alt="img/mcdo.jpg"/></div>
                 <div class="info">
                     <div class="name">
                         <h4>{{ $plat->nom }}</h4>

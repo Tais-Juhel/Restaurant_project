@@ -29,7 +29,6 @@
                     <li><a class="linkList" href="{{ route('commandes.index') }}">Mes commandes</a></li>
                     @endcan
                     @can('admin-users')
-                    <li><a class="linkList" href="#">Tableau de bord</a></li>
                     <li><a class="linkList" href="{{ route('admin.users.index') }}">Utilisateurs</a></li>
                     @endcan
                 </ul>
@@ -74,5 +73,7 @@
         @endforeach
     @endforeach
     </ul>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

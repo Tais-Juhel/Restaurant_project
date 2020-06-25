@@ -21,7 +21,7 @@
                             @can('restau-users')
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="logo">Logo</label>
-                                <div class="col-md-6"><input type="text" class="form-control" id="logo" name="logo" value="{{ $profil->logo }}"></div>
+                                <div class="col-md-6"><input type="file" class="form-control-file" id="logo" name="logo" value="{{ $profil->logo }}"></div>
                             </div>
                             @endcan
                             <div class="form-group row">

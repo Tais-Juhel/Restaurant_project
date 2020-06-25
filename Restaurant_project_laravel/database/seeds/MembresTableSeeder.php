@@ -15,7 +15,7 @@ class MembresTableSeeder extends Seeder
         Membres::create([
             'prenom' => 'Taïs',
             'nom' => 'Juhel',
-            'solde' => '15.0',
+            'solde' => '30.0',
             'id_utilisateur' => '2',
             'adresse' => '10 rue Louis Le Nain'
         ]);

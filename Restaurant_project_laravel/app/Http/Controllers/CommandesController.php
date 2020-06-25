@@ -51,6 +51,10 @@ class CommandesController extends Controller
             $ligne->num_commande = $commande->id;
             $ligne->id_plat = $plat->id_plat;
             $ligne->save();
+
+            $solde = $membre->solde;
+            $membre->solde = $solde - $plat->prix;
+            $membre->save();
         }
 
         return redirect()->route('restaurateurs.index');
