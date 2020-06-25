@@ -27,6 +27,7 @@
                     @can('membre-users')
                     <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
                     <li><a class="linkList" href="{{ route('restaurateurs.index') }}">Restaurants</a></li>
+                    <li><a class="linkList" href="{{ route('commandes.index') }}">Mes commandes</a></li>
                     @endcan
                     @can('admin-users')
                     <li><a class="linkList" href="#">Tableau de bord</a></li>

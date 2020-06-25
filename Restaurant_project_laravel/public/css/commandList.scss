@@ -119,6 +119,10 @@ h1{
             flex-wrap: wrap;
             justify-content: space-between;
 
+            .date{
+                color: grey;
+            }
+
             .prix{
                 font-weight: 700;
             }

@@ -26,6 +26,7 @@
                     @can('membre-users')
                     <li><a class="linkList" href="{{ route('auth.show') }}">Profil</a></li>
                     <li><a class="linkList" href="{{ route('restaurateurs.index') }}">Restaurants</a></li>
+                    <li><a class="linkList" href="{{ route('commandes.index') }}">Mes commandes</a></li>
                     @endcan
                     @can('admin-users')
                     <li><a class="linkList" href="#">Tableau de bord</a></li>
@@ -59,7 +60,7 @@
                         </thead>
                         <tbody>
                             <tr class="info">
-                                <th scope="row">{{ $commande->date_commande }}</th>
+                                <th class="date" scope="row">{{ $commande->date_commande }}</th>
                                 <td class="nom">{{ $plat->nom }}</td>
                                 <td class="prix">{{ $plat->prix }} €</td>
                             </tr>

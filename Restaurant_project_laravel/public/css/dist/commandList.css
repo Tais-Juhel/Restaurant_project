@@ -116,6 +116,10 @@ h1 {
   justify-content: space-between;
 }
 
+.commandList .commande .info .date {
+  color: grey;
+}
+
 .commandList .commande .info .prix {
   font-weight: 700;
 }
